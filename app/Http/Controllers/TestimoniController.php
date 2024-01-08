@@ -147,4 +147,13 @@ class TestimoniController extends Controller
             'message' => 'success'
         ]);
     }
+
+    public function countReviews()
+    {
+        $testimoniCount = Testimoni::count();
+
+        return response()->json([
+            'testimoniCount' => $testimoniCount,
+        ]);
+    }
 }

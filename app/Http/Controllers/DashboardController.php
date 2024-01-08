@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use App\Models\Member;
 use App\Models\Product;
+use App\Models\Testimoni;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -30,6 +31,8 @@ class DashboardController extends Controller
         // Retrieve the count of items (barang)
         $barangCount = Product::count();
 
-        return view('dashboard', ['orderCount' => $orderCount, 'memberCount' => $memberCount, 'barangCount' => $barangCount]);
+        $testimoniCount = Testimoni::count();
+
+        return view('dashboard', ['orderCount' => $orderCount, 'memberCount' => $memberCount, 'barangCount' => $barangCount, 'testimoniCount' => $testimoniCount]);return view('dashboard', ['orderCount' => $orderCount, 'memberCount' => $memberCount, 'barangCount' => $barangCount]);
     }
 }
